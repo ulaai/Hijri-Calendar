@@ -1,4 +1,4 @@
-#Hijri Calendar
+# Hijri Calendar
 
 A very simple web app that scrape today's date in Hijri calendar from [this website](https://calendar.zoznam.sk/islamic_calendar-en.php/) and show it.
 
