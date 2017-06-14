@@ -1,0 +1,71 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Kalender Hijriah</title>
+
+  <link rel="stylesheet" type="text/css" href="{% static 'kalender/style.css' %}" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+
+</head>
+<body>
+<div class="container">
+<div class="hariiniadalah blink">Hijri Calendar</div>
+  <div class="calendar-container">
+      <header>  
+       <div class="systemdate">{% autoescape off %}{{ system_hari }}, {{ system_tanggal }} {{system_bulan}} {{system_tahun}}{% endautoescape %}</div>   
+      <div class="day">{% autoescape off %}{{ hari }}{% endautoescape %}</div>
+      <div class="month">{% autoescape off %}{{ bulan }}{% endautoescape %}</div>
+      <div class="year">{% autoescape off %}{{ tahun }}{% endautoescape %}</div>
+    </header>
+
+  </div>
+  <div style="color:white; text-align:center;">made by <a href="http://github.com/ulaai">Ulaai</a></div>
+
+<br>
+    <div class="ring-left"></div>
+    <div class="ring-right"></div>
+
+  </div> <!-- end calendar-container -->
+
+</div> <!-- end container -->
+</body>
+</html>
+<script type="text/javascript">
+  jQuery(function ($) {
+    function changeColor(selector, colors, time) {
+        /* Params:
+         * selector: string,
+         * colors: array of color strings,
+         * every: integer (in mili-seconds)
+         */
+        var curCol = 0,
+            timer = setInterval(function () {
+                if (curCol === colors.length) curCol = 0;
+                $(selector).css("background-color", colors[curCol]);
+                curCol++;
+            }, time);
+    }
+
+    function hariiniadalah(words) {
+        var curCol = 0;
+        setInterval(function(){
+                if (curCol === words.length) curCol = 0;
+              $(".blink").fadeOut(function () {
+                  $(".blink").text(words[curCol]);
+                  curCol++;
+                  $(this).fadeIn();
+              });
+          } ,3000)
+    }
+    
+    $(window).load(function () {
+        changeColor("body", ["#b1a7ca", "#b1a8ca", "#b1c9cb", "#b1daca", "#b8dfc0", "#b6dec4", "#c9e4c3", "#d9eac6", "#e8f0c9", "#f8f7cb", "#f9dbb7", "#fab9a3", "#f59692", "#f37581"], 3000);
+        hariiniadalah(["hari ini", "today", "오늘", "今天"]);
+   
+    });
+});
+     
+
+</script>

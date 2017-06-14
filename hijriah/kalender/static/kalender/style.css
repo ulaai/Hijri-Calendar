@@ -1,0 +1,76 @@
+body {
+	background-color: #ccc;
+	font: 87.5%/1.5em 'Lato', sans-serif;
+	margin: 0;
+	-webkit-transition: background-color 0.5s ease-in-out;
+    -moz-transition: background-color 0.5s ease-in-out;
+    -o-transition: background-color 0.5s ease-in-out;
+    -khtml-transition: background-color 0.5s ease-in-out;
+    transition: background-color 0.5s ease-in-out;
+
+}
+
+a {
+	color: #ddd;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+td {
+	padding: 0;
+}
+
+.container {
+  left: 50%;
+  position: fixed;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.calendar-container {
+	position: relative;
+	width: 450px;
+	margin-left: auto;      
+    margin-right: auto;       
+}
+
+.calendar-container header {
+	border-radius: 1em;
+	background: #e66b6b;
+	color: #fff;
+	padding: 2em 2em 3em 2em;
+}
+
+.calendar-container .systemdate {
+	text-align: right;
+}
+
+.day {
+	font-size: 8em;
+	font-weight: 900;
+	line-height: 1em;
+}
+
+.month {
+	font-size: 4em;
+	line-height: 1em;
+	text-transform: lowercase;
+}
+
+.year {
+	font-size: 2em;
+	line-height: 1em;
+}
+
+.hariiniadalah {
+	font-size: 2em;
+	line-height: 2em;
+	text-align: center;
+	position: relative;
+	margin: auto;
+	color: #666;
+}
+
